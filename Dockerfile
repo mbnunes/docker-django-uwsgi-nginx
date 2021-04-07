@@ -10,9 +10,5 @@ RUN pip install django==1.4.22
 ADD app/requirements.txt /opt/django/app/requirements.txt
 RUN pip install -r /opt/django/app/requirements.txt
 
-RUN (echo "daemon off;" >> /etc/nginx/nginx.conf &&\
-  rm /etc/nginx/sites-enabled/default &&\
-  ln -s /opt/django/django.conf /etc/nginx/sites-enabled/ )
-
 EXPOSE 80
 ENTRYPOINT ["nginx"]
