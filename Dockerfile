@@ -1,7 +1,7 @@
 FROM python:2.7-stretch
 MAINTAINER Mauricio Nunes <mnunes@embeddednetworks.com.br>
 
-RUN (apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential git python python-dev python-setuptools nginx sqlite3)
+RUN (apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential git python python-dev python-setuptools nginx nginx-full sqlite3)
 RUN (easy_install pip &&\
   pip install uwsgi)
 
